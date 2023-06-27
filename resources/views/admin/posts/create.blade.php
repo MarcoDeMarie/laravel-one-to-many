@@ -47,7 +47,7 @@
                 <option value="" selected>Seleziona il tipo</option>
 
                 @foreach ( $types as $type )
-                <option value="{{ $type->name }}">{{ $type->name }}</option>
+                <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
 
             </select>

@@ -22,7 +22,9 @@ class Post extends Model
 
     ];
 
-
+    public function type(){
+        return $this->gelongsTo(Type::class);
+    }
 
 
     public static function generateSlug($str){

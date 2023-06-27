@@ -46,9 +46,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
 
-
         $form_data = $request->all();
-
         $form_data['slug'] = Post::generateSlug($form_data['title']);
         $form_data['date'] = date('Y-m-d');
 

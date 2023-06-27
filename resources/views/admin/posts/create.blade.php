@@ -43,8 +43,8 @@
 
             <label for="title" class="form-label">Tipo</label>
 
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Seleziona il tipo</option>
+            <select class="form-select" name="type_id">
+                <option value="" selected>Seleziona il tipo</option>
 
                 @foreach ( $types as $type )
                 <option value="{{ $type->name }}">{{ $type->name }}</option>

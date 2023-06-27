@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            PostsTableSeeder::class,
             TypeTableSeeder::class,
+            PostsTableSeeder::class, //non lanciare in produzione
         ]);
     }
 }

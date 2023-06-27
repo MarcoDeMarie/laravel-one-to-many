@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Type;
 
 class PostController extends Controller
 {
@@ -30,7 +31,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+
+        $types = Type::all();
+
+        return view('admin.posts.create', compact('types'));
     }
 
     /**
@@ -50,9 +54,9 @@ class PostController extends Controller
 
         if(array_key_exists('image', $form_data)){
 
-            if($post->image_path){
-                Storage::disk('public')->delete($post->image_path);
-            }
+            // if($post->image_path){
+            //     Storage::disk('public')->delete($post->image_path);
+            // }
 
             $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
             $form_data['image_path'] = Storage::put('uploads', $form_data['image']);

@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Types;
+use App\Models\Type;
 use Illuminate\Support\Str;
 
 
@@ -17,13 +17,13 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = ['HTML', 'CSS', 'JavaScript', 'PHP', 'C++'];
+        $data = ['FrontEnd', 'Backend', 'FullStack', 'Web Application', 'Mobile App'];
 
         foreach($data as $type){
-            $new_type = New Types();
+            $new_type = New Type();
             $new_type->name = $type;
             $new_type->slug = Str::slug($type, '-');
-            dump($new_type);
+            $new_type->save();
         }
     }
 }

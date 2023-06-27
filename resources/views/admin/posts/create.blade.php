@@ -41,6 +41,23 @@
 
         <div class="mb-3">
 
+            <label for="title" class="form-label">Tipo</label>
+
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Seleziona il tipo</option>
+
+                @foreach ( $types as $type )
+                <option value="{{ $type->name }}">{{ $type->name }}</option>
+                @endforeach
+
+            </select>
+
+        </div>
+
+
+
+        <div class="mb-3">
+
             <label for="TEXT" class="form-label">Testo</label>
 
             <textarea
@@ -69,6 +86,7 @@
             >
 
         </div>
+
 
 
         <div class="mb-3">
